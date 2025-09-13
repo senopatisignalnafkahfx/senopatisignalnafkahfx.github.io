@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daftar - Senopatisignalnafkahfx</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="daftar-page">
+  <main class="daftar">
+    <div class="container daftar-inner">
+      <h1>Daftar Sekarang</h1>
+      <p>Scan QR Code berikut untuk melakukan pembayaran / konfirmasi:</p>
+
+      <!-- QR yang bisa di zoom -->
+      <img src="qris.jpg" alt="QR Code" class="qr-img" id="qrImg">
+
+      <p>Atau hubungi langsung via WhatsApp:</p>
+      <a href="https://wa.me/6283838655170" class="btn btn-primary">Chat WhatsApp</a>
+      <div class="back-link"><a href="index.html">← Kembali</a></div>
+    </div>
+  </main>
+
+  <!-- Overlay fullscreen -->
+  <div class="qr-overlay" id="qrOverlay">
+    <img src="qris.jpg" alt="QR Code Zoom">
+  </div>
+
+  <script>
+    // Zoom QR
+    const qrImg = document.getElementById('qrImg');
+    const qrOverlay = document.getElementById('qrOverlay');
+
+    if (qrImg && qrOverlay) {
+      qrImg.addEventListener('click', () => {
+        qrOverlay.classList.add('active');
+      });
+
+      // Klik luar gambar untuk menutup
+      qrOverlay.addEventListener('click', (e) => {
+        if (e.target === qrOverlay) {
+          qrOverlay.classList.remove('active');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
