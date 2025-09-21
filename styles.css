@@ -1,0 +1,556 @@
+/* ======================
+   Reset & Base
+====================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0b0b0b;
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ======================
+   Header
+====================== */
+.site-header {
+  background: #111;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  height: 80px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFD700;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.brand-text {
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #FFD700, #fff7c2, #FFD700);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 5px rgba(255,215,0,0.8),
+    0 0 15px rgba(255,215,0,0.6),
+    0 0 30px rgba(255,165,0,0.5),
+    0 0 50px rgba(255,215,0,0.7);
+  animation: shimmer 4s linear infinite, auraGlow 2.5s ease-in-out infinite alternate;
+}
+
+.nav {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav a {
+  color: #f5f5f5;
+  font-weight: 500;
+}
+
+/* Burger menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #f5f5f5;
+}
+
+/* ======================
+   Hero
+====================== */
+.hero {
+  padding: 8rem 0 4rem;
+  background: #0b0b0b;
+}
+
+.hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-left h1 {
+  font-size: 2.5rem;
+  color: #FFD700;
+}
+
+.hero-left span {
+  color: #fff;
+  font-weight: 400;
+}
+
+.hero-left .lead {
+  margin: 1rem 0;
+}
+
+.hero-right {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ======================
+   Sections
+====================== */
+.section {
+  padding: 4rem 0;
+}
+
+.section h2 {
+  text-align: center;
+  color: #FFD700;
+  margin-bottom: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ======================
+   Cards
+====================== */
+.card {
+  background: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  border: 2px solid rgba(255,215,0,0.6);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: #FFD700;
+}
+
+.price {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #FFD700;
+  box-shadow: 0 0 15px rgba(255,215,0,0.6);
+}
+
+.popular {
+  border: 2px solid #FFD700;
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #FFD700;
+  color: #000;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: #FFD700;
+  margin-bottom: 1rem;
+}
+
+/* ======================
+   Testimonials
+====================== */
+.testimonials-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial {
+  display: none;
+  text-align: center;
+}
+
+.testimonial.active {
+  display: block;
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #ddd;
+  margin-bottom: 0.8rem;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 0.5rem;
+  color: #FFD700;
+  font-size: 0.95rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.testimonial.card {
+  background: #111;
+  border: 1px solid #FFD700;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  text-align: center;
+  pointer-events: none;
+}
+
+/* ======================
+   Footer
+====================== */
+.site-footer {
+  background: #111;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.site-footer .socials {
+  margin-top: 0.5rem;
+}
+
+.site-footer .socials a {
+  margin: 0 0.5rem;
+  color: #FFD700;
+}
+
+/* ======================
+   Buttons
+====================== */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #FFD700;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #e6c200;
+}
+
+.btn-ghost {
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  padding: 0.5rem 1rem;
+}
+
+.btn-ghost:hover {
+  background: #FFD700;
+  color: #000;
+}
+
+/* ======================
+   Reveal animation
+====================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======================
+   Halaman Daftar
+====================== */
+.daftar-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.daftar-inner {
+  background: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.daftar-inner h1 {
+  color: #FFD700;
+  margin-bottom: 1rem;
+}
+
+.daftar-inner p {
+  margin: 1rem 0;
+}
+
+.qr-img {
+  max-width: 250px;
+  width: 100%;
+  border: 4px solid #FFD700;
+  border-radius: 12px;
+  margin: 1rem 0;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInQR 1.2s ease forwards;
+}
+
+.back-link {
+  margin-top: 1.5rem;
+}
+
+.back-link a {
+  color: #FFD700;
+  font-weight: 500;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* Fade-in animasi khusus QR */
+@keyframes fadeInQR {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Overlay fullscreen untuk zoom QR */
+.qr-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 9999;
+}
+
+.qr-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.qr-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 4px solid #FFD700;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,215,0,0.6);
+  animation: zoomIn 0.3s ease forwards;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0.5; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ======================
+   Blog Page
+====================== */
+.blog-page h2 {
+  text-align: center;
+  color: #FFD700;
+  margin-bottom: 2rem;
+}
+
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.blog-post {
+  text-align: left;
+}
+
+.blog-post h3 {
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post p {
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.blog-post a {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.blog-post a:hover {
+  text-decoration: underline;
+}
+
+/* ======================
+   Fix: Navbar ketutup konten
+====================== */
+section {
+  scroll-margin-top: 90px;
+}
+
+main,
+.section.blog-page {
+  padding-top: 90px;
+}
+
+/* ======================
+   Animations
+====================== */
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes auraGlow {
+  from {
+    text-shadow:
+      0 0 5px rgba(255,215,0,0.9),
+      0 0 15px rgba(255,215,0,0.7),
+      0 0 30px rgba(255,165,0,0.6),
+      0 0 50px rgba(255,215,0,0.8);
+  }
+  to {
+    text-shadow:
+      0 0 10px rgba(255,215,0,1),
+      0 0 25px rgba(255,215,0,0.9),
+      0 0 45px rgba(255,165,0,0.8),
+      0 0 70px rgba(255,215,0,1);
+  }
+}
+
+/* ======================
+   Responsive
+====================== */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+  }
+}
+
+/* Tombol kembali (hitam) */
+.btn-back {
+  background: #000;
+  color: #FFD700;
+  border: 2px solid #FFD700;
+}
+
+.btn-back:hover {
+  background: #222; /* sedikit lebih terang pas hover */
+  color: #fff;
+  border-color: #FFD700;
+}
+
+/* ===== Fix konten artikel ketutup navbar ===== */
+.blog-page {
+  padding-top: 100px; /* kasih jarak sesuai tinggi header */
+}
+
+/* Kalau nanti ada anchor di artikel */
+.blog-page h2,
+.blog-page h3,
+.blog-page h4,
+.blog-page p {
+  scroll-margin-top: 100px; /* biar kalau loncat pakai anchor, gak ketiban nav */
+}
+
+/* Gambar dalam artikel blog */
+.blog-post .blog-img {
+  width: 100%;
+  max-width: 600px;
+  margin: 15px 0;
+  border-radius: 12px;
+  display: block;
+}
